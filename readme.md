@@ -1,3 +1,26 @@
+- [CRUD Pokémon](#crud-pok%c3%a9mon)
+  - [Table Pokemon](#table-pokemon)
+  - [Table Type](#table-type)
+  - [Table POKEMON_TYPE](#table-pokemontype)
+- [Créer un CRUD avec PDO et PHP procédural](#cr%c3%a9er-un-crud-avec-pdo-et-php-proc%c3%a9dural)
+  - [Connexion à la base de données](#connexion-%c3%a0-la-base-de-donn%c3%a9es)
+  - [Définitions](#d%c3%a9finitions)
+  - [Utilisation de PDO](#utilisation-de-pdo)
+    - [1. Rédiger votre requête](#1-r%c3%a9diger-votre-requ%c3%aate)
+  - [2. Demander à PDO de préparer votre requête](#2-demander-%c3%a0-pdo-de-pr%c3%a9parer-votre-requ%c3%aate)
+  - [3. Exécuter votre requête](#3-ex%c3%a9cuter-votre-requ%c3%aate)
+    - [4. Récupérer les résultats](#4-r%c3%a9cup%c3%a9rer-les-r%c3%a9sultats)
+    - [Requête complète avec un SELECT et plusieurs éléments](#requ%c3%aate-compl%c3%a8te-avec-un-select-et-plusieurs-%c3%a9l%c3%a9ments)
+    - [Requête complète avec un SELECT et un seul élément et une variable](#requ%c3%aate-compl%c3%a8te-avec-un-select-et-un-seul-%c3%a9l%c3%a9ment-et-une-variable)
+    - [Requête complète avec un INSERT](#requ%c3%aate-compl%c3%a8te-avec-un-insert)
+  - [CAS BROWSE](#cas-browse)
+  - [CAS READ](#cas-read)
+  - [CAS ADD](#cas-add)
+    - [`new.php`](#newphp)
+    - [`create.php`](#createphp)
+  - [CAS EDIT](#cas-edit)
+  - [CAS DELETE](#cas-delete)
+
 # CRUD Pokémon
 
 > Les commentaires explicatifs se trouvent dans le CRUD de Type uniquement !
