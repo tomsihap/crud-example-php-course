@@ -1,5 +1,8 @@
 # CRUD Pokémon
 
+> Les commentaires explicatifs se trouvent dans le CRUD de Type uniquement !
+
+
 ## Table Pokemon
 - id            INT AI PK
 - name          VARCHAR(30)
