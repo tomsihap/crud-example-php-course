@@ -1,13 +1,21 @@
 <?php
+// On inclut le header commun à toutes les pages
 include_once('../_partials/header.php');
+
+// On inclut le fichier contenant la base de données et la variable $bdd
 require_once('../config/db.php');
 
+// Requête pour récupérer tous les types
 $query = "SELECT * FROM type";
+
+// On "prépare" la requête, c'est à dire qu'on dit à PDO de se préparer à exécuter une requête
 $response = $bdd->prepare($query);
+
+// On exécute la requête (sans paramètres ici car nous n'avons pas de variables à donner à la requête)
 $response->execute([]);
 
+// On récupère le résultat de la requête. Comme il y a plusieurs éléments, on utilise fetchAll, qui nous retourne un tableau de plusieurs éléments
 $types = $response->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 
@@ -22,7 +30,10 @@ $types = $response->fetchAll(PDO::FETCH_ASSOC);
     </thead>
     <?php foreach ($types as $type) : ?>
         <tr>
+            <!-- Comme on a accès à $type, on l'utilise dans notre page -->
             <td><?= $type['id'] ?></td>
+
+            <!-- On envoie à la page show.php le paramètre "id", contenant l'id de notre élément à afficher dans show.php -->
             <td><a href="show.php?id=<?= $type['id'] ?>"><?= $type['name'] ?></a></td>
         </tr>
     <?php endforeach; ?>
