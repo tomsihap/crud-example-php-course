@@ -14,13 +14,17 @@
     - [Requête complète avec un SELECT et un seul élément et une variable](#requ%c3%aate-compl%c3%a8te-avec-un-select-et-un-seul-%c3%a9l%c3%a9ment-et-une-variable)
     - [Requête complète avec un INSERT](#requ%c3%aate-compl%c3%a8te-avec-un-insert)
   - [CAS BROWSE](#cas-browse)
+    - [`list.php`](#listphp)
   - [CAS READ](#cas-read)
+    - [`show.php`](#showphp)
   - [CAS ADD](#cas-add)
     - [`new.php`](#newphp)
     - [`create.php`](#createphp)
   - [CAS EDIT](#cas-edit)
+    - [`add.php`](#addphp)
+    - [`edit.php`](#editphp)
   - [CAS DELETE](#cas-delete)
-
+    - [`delete.php`](#deletephp)
 # CRUD Pokémon
 
 > Les commentaires explicatifs se trouvent dans le CRUD de Type uniquement !
@@ -187,6 +191,7 @@ On cherche à afficher TOUS les éléments d'une table. Pour cela, on n'a besoin
 
 > **Astuce** : vous pouvez ouvrir du PHP avec `<?= $var ?>` si vous comptiez faire un `<?php echo $var ?>` : en effet, le `=` comptera comme un `echo`.
 
+### `list.php`
 ```php
 <?php
 require_once('../config/db.php');   // Import du fichier de DB
@@ -221,6 +226,7 @@ En général, on vient sur cette page depuis un lien, qui nous a fourni en param
 
 Attention à la requête qui prend cette fois une variable (l'id) !
 
+### `show.php`
 ```php
 <?php
 require_once('../config/db.php');   // Import du fichier de DB
@@ -298,8 +304,7 @@ Il suffit de reprendre la requête d'un READ et de l'ajouter dans `edit.php`.
 
 Bien sûr, le lien nous envoyant sur `edit.php` nous a sans doute passé un paramètre `GET` type : `edit.php?id=12` pour savoir de quel élément nous parlons.
 
-
-`add.php`
+### `add.php`
 ```php
 <?php
 require_once('../config/db.php');   // Import du fichier de DB
@@ -324,7 +329,7 @@ $pokemon = $response->fetch(PDO::FETCH_ASSOC);
 </form>
 ```
 
-`edit.php`
+### `edit.php`
 ```php
 <?php
 // On importe la bdd
@@ -348,7 +353,7 @@ header('Location: show.php?id=' . $_POST['id']);
 ## CAS DELETE
 Pour ce cas, nous n'avons qu'une page de traitement : `delete.php`. En effet, en général, on va simplement cliquer sur un lien qui passera en `GET` l'ID à supprimer : `delete.php?id=12`.
 
-`delete.php`
+### `delete.php`
 
 ```php
 <?php
