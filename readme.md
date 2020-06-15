@@ -47,16 +47,20 @@ Créez un fichier, par exemple `db.php` qui contiendra la connexion à la base d
 
 const DB_HOST = 'localhost';
 const DB_PORT = 8889;
-const DB_NAME = 'hbpokemon';
+const DB_NAME = 'pokedex';
 const DB_USER = 'root';
 const DB_PSWD = 'root';
 
 try {
-    $bdd = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8;port='.DB_PORT, DB_USER, DB_PSWD);
-} catch(Exception $e) {
+    $bdd = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8;port=' . DB_PORT, DB_USER, DB_PSWD, [
+        'ATTR_ERRMODE' => PDO::ERRMODE_EXCEPTION
+    ]);
+} catch (Exception $e) {
     var_dump($e);
     die;
 }
+
+var_dump($bdd);
 ```
 > **IMPORTANT**: Vous importerez ce fichier à chaque fois que vous aurez besoin d'utiliser la base de données, grâce à `require_once('chemin/vers/db.php');`.
 
