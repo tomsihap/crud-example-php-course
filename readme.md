@@ -316,7 +316,7 @@ $response->execute([
 ]);   // On exécute  la requête
 
 // On a UN seul élément ! Donc variable au SINGULILER et fetch plutôt que fetchAll :
-$pokemon = $response->fetch(PDO::FETCH_ASSOC);
+$dog = $response->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <form action="edit.php" method="post">
