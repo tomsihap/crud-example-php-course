@@ -35,16 +35,6 @@
 - description   TEXT
 - size          INT
 - weight        INT
-- evolution_id  FK
-- pokedex_id    INT
-- 
-## Table Type
-- id            INT AI PK
-- name          VARCHAR(30)
-
-## Table POKEMON_TYPE
-- id_pokemon    PK FK
-- id_type       PK FK
 
 ---
 # Créer un CRUD avec PDO et PHP procédural
